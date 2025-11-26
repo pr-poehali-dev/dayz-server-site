@@ -36,12 +36,64 @@ const Index = () => {
     { label: 'Активных баз', value: '89', icon: 'Home' },
   ];
 
-  const rules = [
-    'Запрещено использование читов и эксплойтов',
-    'Уважайте других игроков и их базы',
-    'Гриферство карается баном',
-    'Создание альянсов приветствуется',
-    'Следите за объявлениями администрации',
+  const rulesCategories = [
+    {
+      title: 'Общие правила',
+      rules: [
+        'Администрация может изменить правила в любое время',
+        'Запрещено оскорбление админского состава и других игроков',
+        'Запрещено использование читов и багов',
+        'Запрещены мульти-аккаунты',
+        'Запрещена реклама сторонних ресурсов',
+        'Запрещены нечитаемые и оскорбительные ники',
+        'Запрещены флуд, спам и мат в чатах'
+      ]
+    },
+    {
+      title: 'Основные правила игры',
+      rules: [
+        'Запрещены убийства и нападения на игроков (PvE сервер)',
+        'Запрещен рейд баз и уничтожение имущества',
+        'Запрещено воровство транспорта и имущества',
+        'Запрещен угон ТС даже если оно открыто',
+        'В ТЗ запрещен тараны, воровство лута и слив топлива',
+        'Автомобили на ТЗ более часа - удаляются',
+        'Запрещена "варка лута" для респавна предметов',
+        'При агрессии можете дать отпор (с видео)'
+      ]
+    },
+    {
+      title: 'Правила строительства',
+      rules: [
+        'Регистрация базы обязательна в #Регистрация-базы',
+        'Запрещена стройка в радиусе 1500м от Сейв-Зон',
+        'Запрещена стройка в 800м от военок и 400м от городов',
+        'Запрещена застройка важных объектов (заправки, колодцы)',
+        'Запрещено преграждать дороги постройками',
+        'Запрещена стройка ближе 300м от асфальтовых дорог'
+      ]
+    },
+    {
+      title: 'Донат правила',
+      rules: [
+        'Доната возврату не подлежит (возможен обмен)',
+        'Восстановление не чаще 2 раз в день',
+        'Донат действует на сезон',
+        'Передача донатных вещей требует регистрации',
+        'Продажа донатных вещей за реал запрещена'
+      ]
+    },
+    {
+      title: 'Наказания',
+      rules: [
+        'Мелкие нарушения - предупреждение',
+        'Воровство ТС/вещей - вайп или перманентный бан',
+        'Оскорбление администрации - перманентный бан',
+        'Рейд базы - перманентный бан',
+        'Убийство игрока - перманентный бан',
+        '3 предупреждения = перманентный бан'
+      ]
+    }
   ];
 
   const shopItems = [
@@ -178,27 +230,59 @@ const Index = () => {
 
       case 'rules':
         return (
-          <div className="max-w-3xl mx-auto space-y-6 animate-fade-in">
+          <div className="max-w-5xl mx-auto space-y-6 animate-fade-in">
             <h2 className="text-4xl font-bold text-accent mb-6">ПРАВИЛА СЕРВЕРА</h2>
-            <Card className="bg-card border-border">
-              <CardContent className="p-8 space-y-4">
-                {rules.map((rule, index) => (
-                  <div key={index} className="flex items-start gap-4 p-4 rounded-lg hover:bg-muted/30 transition-colors">
-                    <div className="w-8 h-8 bg-primary/20 rounded flex items-center justify-center flex-shrink-0 mt-1">
-                      <span className="text-primary font-bold">{index + 1}</span>
-                    </div>
-                    <p className="text-foreground text-lg">{rule}</p>
-                  </div>
-                ))}
-              </CardContent>
-            </Card>
-            <Card className="bg-destructive/10 border-destructive/30">
+            
+            <Card className="bg-destructive/10 border-destructive/30 mb-6">
               <CardContent className="p-6 flex items-start gap-4">
                 <Icon name="AlertTriangle" className="text-destructive flex-shrink-0" size={24} />
-                <p className="text-foreground">
-                  <span className="font-bold text-destructive">ВНИМАНИЕ:</span> Нарушение правил приведет к бану без предупреждения. 
-                  Администрация имеет право изменять правила без уведомления.
-                </p>
+                <div className="space-y-2">
+                  <p className="text-foreground">
+                    <span className="font-bold text-destructive">ВНИМАНИЕ:</span> Нарушение правил приведет к бану без предупреждения.
+                  </p>
+                  <p className="text-sm text-muted-foreground">
+                    Администрация имеет право изменять правила без уведомления и рассматривает каждую ситуацию индивидуально.
+                  </p>
+                </div>
+              </CardContent>
+            </Card>
+
+            <div className="grid md:grid-cols-2 gap-6">
+              {rulesCategories.map((category, categoryIndex) => (
+                <Card key={categoryIndex} className="bg-card border-border">
+                  <CardContent className="p-6 space-y-4">
+                    <h3 className="text-2xl font-bold text-primary flex items-center gap-2">
+                      <Icon name="Shield" className="text-primary" size={24} />
+                      {category.title}
+                    </h3>
+                    <div className="space-y-2">
+                      {category.rules.map((rule, ruleIndex) => (
+                        <div 
+                          key={ruleIndex} 
+                          className="flex items-start gap-3 p-3 rounded-lg hover:bg-muted/20 transition-colors"
+                        >
+                          <div className="w-2 h-2 bg-accent rounded-full flex-shrink-0 mt-2"></div>
+                          <p className="text-foreground text-sm leading-relaxed">{rule}</p>
+                        </div>
+                      ))}
+                    </div>
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
+
+            <Card className="bg-secondary/10 border-secondary/30">
+              <CardContent className="p-6">
+                <h3 className="text-xl font-bold mb-4 flex items-center gap-2">
+                  <Icon name="FileText" className="text-secondary" size={24} />
+                  Дополнительные правила
+                </h3>
+                <div className="space-y-3 text-sm text-muted-foreground">
+                  <p><span className="font-semibold text-foreground">Правила музыки:</span> Запрещено включать музыку на трейде (машина, магнитофон, микрофон)</p>
+                  <p><span className="font-semibold text-foreground">Правила данжей:</span> Обязательная запись в канале "Очередь данжи", нельзя занимать больше суток вперед</p>
+                  <p><span className="font-semibold text-foreground">Правила KMUK:</span> Регистрация обязательна, время прохождения в пределах рестарта, повторное прохождение запрещено</p>
+                  <p><span className="font-semibold text-foreground">Администрация:</span> Админы не читают ЛС - все вопросы через тикеты. Восстановление лута только с видео.</p>
+                </div>
               </CardContent>
             </Card>
           </div>
