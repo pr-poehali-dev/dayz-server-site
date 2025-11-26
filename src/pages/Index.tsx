@@ -109,6 +109,69 @@ const Index = () => {
                 </Card>
               ))}
             </section>
+
+            <Separator className="bg-border/50" />
+
+            <section className="grid md:grid-cols-2 gap-6">
+              <Card className="bg-card border-border">
+                <CardContent className="p-6 space-y-4">
+                  <h3 className="text-2xl font-bold flex items-center gap-2">
+                    <Icon name="MapPin" className="text-primary" size={24} />
+                    Карта сервера - Deer Isle
+                  </h3>
+                  <div className="aspect-video bg-muted/30 rounded-lg overflow-hidden">
+                    <iframe
+                      src="https://dayz.ginfo.gg/livemap/?deerisle"
+                      className="w-full h-full border-0"
+                      title="DeerIsle Map"
+                      allowFullScreen
+                    />
+                  </div>
+                  <p className="text-muted-foreground text-sm">
+                    Исследуйте огромный остров Deer Isle с уникальными локациями и секретными точками лута
+                  </p>
+                </CardContent>
+              </Card>
+
+              <div className="space-y-6">
+                <Card className="bg-card border-border">
+                  <CardContent className="p-6 space-y-4">
+                    <h3 className="text-2xl font-bold flex items-center gap-2">
+                      <Icon name="MessageSquare" className="text-primary" size={24} />
+                      Discord сообщество
+                    </h3>
+                    <div className="aspect-[4/3] bg-muted/30 rounded-lg overflow-hidden">
+                      <iframe
+                        src="https://discord.com/widget?id=YOUR_DISCORD_SERVER_ID&theme=dark"
+                        className="w-full h-full border-0"
+                        title="Discord Widget"
+                        allowTransparency
+                        sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"
+                      />
+                    </div>
+                  </CardContent>
+                </Card>
+
+                <Card className="bg-card border-border">
+                  <CardContent className="p-6 space-y-4">
+                    <h3 className="text-2xl font-bold flex items-center gap-2">
+                      <Icon name="Trophy" className="text-primary" size={24} />
+                      Статистика Wargame
+                    </h3>
+                    <div className="bg-muted/30 rounded-lg p-6 text-center space-y-3">
+                      <p className="text-muted-foreground text-sm">Ваша статистика убийств, смертей и достижений</p>
+                      <Button 
+                        className="w-full bg-secondary hover:bg-secondary/90"
+                        onClick={() => window.open('https://wargame.gg/dayz', '_blank')}
+                      >
+                        <Icon name="ExternalLink" className="mr-2" size={18} />
+                        Открыть Wargame статистику
+                      </Button>
+                    </div>
+                  </CardContent>
+                </Card>
+              </div>
+            </section>
           </div>
         );
 
