@@ -140,14 +140,15 @@ const Index = () => {
                       <Icon name="MessageSquare" className="text-primary" size={24} />
                       Discord сообщество
                     </h3>
-                    <div className="aspect-[4/3] bg-muted/30 rounded-lg overflow-hidden">
-                      <iframe
-                        src="https://discord.com/widget?id=YOUR_DISCORD_SERVER_ID&theme=dark"
-                        className="w-full h-full border-0"
-                        title="Discord Widget"
-                        allowTransparency
-                        sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"
-                      />
+                    <div className="space-y-3">
+                      <p className="text-muted-foreground text-sm">Присоединяйся к нашему сообществу для общения и поиска союзников</p>
+                      <Button 
+                        className="w-full bg-[#5865F2] hover:bg-[#4752C4] text-white font-semibold"
+                        onClick={() => window.open('https://discord.gg/rGK3kza6H2', '_blank')}
+                      >
+                        <Icon name="MessageSquare" className="mr-2" size={18} />
+                        Присоединиться к Discord
+                      </Button>
                     </div>
                   </CardContent>
                 </Card>
