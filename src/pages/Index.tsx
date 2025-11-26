@@ -319,9 +319,13 @@ const Index = () => {
       >
         <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-background"></div>
         <div className="relative z-10 text-center space-y-6 px-4">
-          <h1 className="text-5xl md:text-7xl font-bold text-foreground tracking-wider animate-fade-in">
-            THE CRISIS <span className="text-primary">ZONE</span>
-          </h1>
+          <div className="animate-fade-in">
+            <img 
+              src="https://cdn.poehali.dev/files/bf7c7e64-919d-4a05-bf22-a20b4c2a27c6.jpg" 
+              alt="CRIZIS ZONE"
+              className="mx-auto max-w-[600px] w-full h-auto"
+            />
+          </div>
           <p className="text-xl md:text-2xl text-muted-foreground font-light animate-fade-in" style={{ animationDelay: '0.2s' }}>
             Выживание против зомби в постапокалиптическом мире
           </p>
