@@ -256,7 +256,7 @@ const Index = () => {
         <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-background"></div>
         <div className="relative z-10 text-center space-y-6 px-4">
           <h1 className="text-5xl md:text-7xl font-bold text-foreground tracking-wider animate-fade-in">
-            DAYZ <span className="text-primary">СЕРВЕР</span>
+            THE CRISIS <span className="text-primary">ZONE</span>
           </h1>
           <p className="text-xl md:text-2xl text-muted-foreground font-light animate-fade-in" style={{ animationDelay: '0.2s' }}>
             Выживание против зомби в постапокалиптическом мире
@@ -305,9 +305,9 @@ const Index = () => {
         <div className="container mx-auto px-4 py-8">
           <div className="grid md:grid-cols-3 gap-8">
             <div className="space-y-4">
-              <h3 className="text-xl font-bold text-accent">DAYZ СЕРВЕР</h3>
+              <h3 className="text-xl font-bold text-accent">THE CRISIS ZONE</h3>
               <p className="text-muted-foreground text-sm">
-                Лучший сервер для кооперативного выживания в мире DayZ
+                Лучший сервер для кооперативного выживания в зоне кризиса
               </p>
             </div>
             <div className="space-y-4">
@@ -328,7 +328,7 @@ const Index = () => {
           </div>
           <Separator className="my-8 bg-border/50" />
           <div className="text-center text-muted-foreground text-sm">
-            © 2024 DayZ Server. Все права защищены.
+            © 2024 The Crisis Zone. Все права защищены.
           </div>
         </div>
       </footer>
