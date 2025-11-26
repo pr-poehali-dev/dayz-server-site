@@ -157,16 +157,16 @@ const Index = () => {
                   <CardContent className="p-6 space-y-4">
                     <h3 className="text-2xl font-bold flex items-center gap-2">
                       <Icon name="Trophy" className="text-primary" size={24} />
-                      Статистика Wargame
+                      Wargame - Голосование
                     </h3>
-                    <div className="bg-muted/30 rounded-lg p-6 text-center space-y-3">
-                      <p className="text-muted-foreground text-sm">Ваша статистика убийств, смертей и достижений</p>
+                    <div className="space-y-3">
+                      <p className="text-muted-foreground text-sm">Проголосуй за сервер и получи бонусы!</p>
                       <Button 
                         className="w-full bg-secondary hover:bg-secondary/90"
-                        onClick={() => window.open('https://wargame.gg/dayz', '_blank')}
+                        onClick={() => window.open('https://wargm.ru/server/74476/votes', '_blank')}
                       >
-                        <Icon name="ExternalLink" className="mr-2" size={18} />
-                        Открыть Wargame статистику
+                        <Icon name="ThumbsUp" className="mr-2" size={18} />
+                        Голосовать на Wargame
                       </Button>
                     </div>
                   </CardContent>
